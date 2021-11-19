@@ -25,6 +25,7 @@ def generateEnd(before, left):
         for i in range(0, len(znaki)):
             generateEnd(before + znaki[i], left - 1)
 
+watki = 60
 
 print("Witaj Hakerze")
 print("Jezeli chcesz testowac wpisz slowo TEST")
@@ -54,6 +55,12 @@ else:
     print("Cudownie, ilu znakowe hasla nalezy testowac?")
 
     dlugosc = int(input("> "))
+
+    print("Na ilu watkach chcesz odpalic testowanie?")
+
+    watki = int(input("> "))
+
+    debug = False
 
 print("Wszystko gotowe. Kliknij aby zaczac :)")
 
@@ -103,9 +110,8 @@ def sendRequest(password):
 
         running = False
 
+        input()
 
-
-watki = 20
 
 if debug:
 
