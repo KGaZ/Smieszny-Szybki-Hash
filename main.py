@@ -1,5 +1,6 @@
 from random import random, randint
 import requests
+import mechanize
 
 dlugosc = 5
 
@@ -33,8 +34,9 @@ def generateEnd(before, left):
 
 data = {"LoginName":"jgalgan@sbs.sniadek.pl",
         "Password":input("Podaj hasło: ")}
-url = "https://cufs.vulcan.net.pl/kielce/Account/LogOn?ReturnUrl=%2Fkielce%2FFS%2FLS%3Fwa%3Dwsignin1.0%26wtrealm%3Dhttps%253a%252f%252fuonetplus.vulcan.net.pl%252fkielce%252fLoginEndpoint.aspx%26wctx%3Dhttps%253a%252f%252fuonetplus.vulcan.net.pl%252fkielce%252fLoginEndpoint.aspx"
 
-response = requests.post(url, data)
+url = "https://cufs.vulcan.net.pl/kielce/Account/LogOn"
+
+response = requests.post(url, params=data)
 
 print(response.text)
